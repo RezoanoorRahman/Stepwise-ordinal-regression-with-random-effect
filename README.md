@@ -4,16 +4,12 @@ While working for a project, I wanted to use stepwise variable selection for an 
 
 For comparing multiple models, I used Akaike's information criterion (aic). 
 
-Algorithm sketch:
-
-- Start with the null model
-- 
-## Stepwise Selection Algorithm for Ordinal Regression with Fixed and Random Effects
+## Process:
 
 **Input:**
 - `Y`: ordinal response variable  
-- `Fixed_Variables`: list of candidate fixed effect variables  
-- `Random_Variables`: list of candidate random effect grouping variables  
+- `Fixed_Variables`: list of fixed effect variables  
+- `Random_Variables`: list of random effect grouping variables  
 - `Data`: dataset containing all variables  
 
 ---
@@ -74,6 +70,6 @@ Algorithm sketch:
 ---
 
 **Notes:**
-- `clm` is used when no random effects are present.  
+- `clm` if all selected variables are fixed effect variables.  
 - `clmm` is used once at least one random effect is included.  
 - Greedy slection: at each step, choose the variable (fixed or random) with the largest reduction in AIC.  
